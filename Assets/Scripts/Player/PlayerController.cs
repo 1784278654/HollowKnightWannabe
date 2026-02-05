@@ -68,6 +68,25 @@ public class PlayerController : MonoBehaviour
     public float lowJumpGravityMultiplier = 2.0f; // when jump released early
 
 
+    [Header("Wall Jump (Hold Extends Distance)")]
+    public float wallJumpBaseX = 2.0f;      // tap: small horizontal push
+    public float wallJumpMaxX = 7.5f;      // hold: can reach this
+    public float wallJumpY = 12.0f;     // vertical launch
+
+    public float wallJumpSustainTime = 0.12f;  // how long holding can extend X
+    public float wallJumpSustainAccel = 80f;   // how fast X ramps up during sustain
+
+    public float wallJumpControlLock = 0.08f;  // prevent immediate override by normal move code
+
+
+    private bool _isWallJumping;
+    private float _wallJumpSustainUntil;
+    private float _wallJumpLockUntil;
+    private int _wallDir; // +1 if wall on right, -1 if wall on left (push opposite)
+    private bool isWallOnRight;
+
+
+
 
     // Start is called before the first frame update
     private void Start() {
@@ -87,6 +106,7 @@ public class PlayerController : MonoBehaviour
     {
         updatePlayerState();
 
+
         if (_isInputEnabled)
         {
             _moveInput = Input.GetAxisRaw("Horizontal"); // SNAPPY
@@ -98,11 +118,48 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        ApplyWallJumpSustain();
+
+        // If you have normal horizontal movement, lock it briefly after wall jump
+        if (Time.time < _wallJumpLockUntil) return;
+
+
         if (!_isInputEnabled) return;
 
         ApplyHorizontalMovement();
-        ApplyBetterGravity(); // section 2
+        ApplyBetterGravity();
     }
+
+    private void ApplyWallJumpSustain()
+    {
+        if (!_isWallJumping) return;
+
+        // stop sustaining after window
+        if (Time.time > _wallJumpSustainUntil)
+        {
+            _isWallJumping = false;
+            return;
+        }
+
+        // If player releases Jump early, stop extending distance immediately
+        if (!Input.GetButton("Jump"))
+        {
+            _isWallJumping = false;
+            return;
+        }
+
+        int pushDir = -_wallDir;
+        float targetX = pushDir * wallJumpMaxX;
+
+        float newX = Mathf.MoveTowards(
+            _rigidbody.velocity.x,
+            targetX,
+            wallJumpSustainAccel * Time.fixedDeltaTime
+        );
+
+        _rigidbody.velocity = new Vector2(newX, _rigidbody.velocity.y);
+    }
+
 
     private void ApplyHorizontalMovement()
     {
@@ -170,6 +227,9 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("IsClimb", true);
 
             _isSprintable = true;
+
+            if(transform.localScale.x == -1) isWallOnRight = true;
+            else isWallOnRight = false;
         }
     }
 
@@ -422,17 +482,38 @@ public class PlayerController : MonoBehaviour
 
     private void climbJump()
     {
-        Vector2 realClimbJumpForce;
-        realClimbJumpForce.x = climbJumpForce.x * transform.localScale.x;
-        realClimbJumpForce.y = climbJumpForce.y;
-        _rigidbody.AddForce(realClimbJumpForce, ForceMode2D.Impulse);
+        if (_isClimb && Input.GetButtonDown("Jump"))
+        {
+            DoWallJumpImmediate();
+        }
 
-        _animator.SetTrigger("IsClimbJump");
-        _animator.SetTrigger("IsJumpFirst");
-
-        _isInputEnabled = false;
-        StartCoroutine(climbJumpCoroutine(_climbJumpDelay));
     }
+
+    private void DoWallJumpImmediate()
+    {
+        _wallDir = GetWallDir();       // +1 wall right, -1 wall left
+        int pushDir = -_wallDir;       // push away from wall
+
+        // Instant jump begins NOW:
+        _rigidbody.velocity = new Vector2(pushDir * wallJumpBaseX, wallJumpY);
+
+        _isWallJumping = true;
+        _wallJumpSustainUntil = Time.time + wallJumpSustainTime;
+        _wallJumpLockUntil = Time.time + wallJumpControlLock;
+
+        _isClimb = false; // exit climbing state if you have it
+    }
+
+
+    private int GetWallDir()
+    {
+        // Return +1 if wall is on right, -1 if wall is on left
+        // Replace with your actual wall check booleans.
+        if (isWallOnRight) return +1;
+        return -1;
+    }
+
+
 
     private IEnumerator climbJumpCoroutine(float delay)
     {
