@@ -50,6 +50,25 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private BoxCollider2D _boxCollider;
 
+
+
+
+    [Header("HK-style Movement")]
+    public float maxRunSpeed = 8f;
+    public float groundAccel = 80f;
+    public float groundDecel = 100f;
+    public float airAccel = 60f;
+    public float airDecel = 40f;
+
+    private float _moveInput;
+    private float _targetX;
+
+    [Header("HK-style Jump")]
+    public float fallGravityMultiplier = 2.5f;
+    public float lowJumpGravityMultiplier = 2.0f; // when jump released early
+
+
+
     // Start is called before the first frame update
     private void Start() {
         _isInputEnabled = true;
@@ -67,15 +86,72 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         updatePlayerState();
+
         if (_isInputEnabled)
         {
-            move();
+            _moveInput = Input.GetAxisRaw("Horizontal"); // SNAPPY
             jumpControl();
-            fallControl();
             sprintControl();
             attackControl();
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (!_isInputEnabled) return;
+
+        ApplyHorizontalMovement();
+        ApplyBetterGravity(); // section 2
+    }
+
+    private void ApplyHorizontalMovement()
+    {
+        _targetX = _moveInput * maxRunSpeed;
+
+        float accel = _isGrounded
+            ? (Mathf.Abs(_targetX) > 0.01f ? groundAccel : groundDecel)
+            : (Mathf.Abs(_targetX) > 0.01f ? airAccel : airDecel);
+
+        float newX = Mathf.MoveTowards(_rigidbody.velocity.x, _targetX, accel * Time.fixedDeltaTime);
+        _rigidbody.velocity = new Vector2(newX, _rigidbody.velocity.y);
+
+        // Your facing + animations can still use _moveInput
+        if (!_isClimb)
+        {
+            if (_moveInput != 0)
+            {
+                // flip logic
+                Vector3 s = transform.localScale;
+                s.x = (_moveInput < 0) ? 1 : -1; // you have inverted sprite
+                s.y = 1; s.z = 1;
+                transform.localScale = s;
+
+                _animator.SetBool("IsRun", true);
+            }
+            else
+            {
+                _animator.SetBool("IsRun", false);
+            }
+        }
+    }
+
+    private void ApplyBetterGravity()
+    {
+        if (_isClimb) return; // keep your climb behavior
+
+        if (_rigidbody.velocity.y < 0)
+        {
+            // falling -> faster fall
+            _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallGravityMultiplier - 1f) * Time.fixedDeltaTime;
+        }
+        else if (_rigidbody.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            // jump released early -> cut jump short
+            _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpGravityMultiplier - 1f) * Time.fixedDeltaTime;
+        }
+    }
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -252,18 +328,6 @@ public class PlayerController : MonoBehaviour
             jump();
     }
 
-    private void fallControl()
-    {
-        if (Input.GetButtonUp("Jump") && !_isClimb)
-        {
-            _isFalling = true;
-            fall();
-        } else
-        {
-            _isFalling = false;
-        }
-    }
-
     private void sprintControl()
     {
         if (Input.GetKeyDown(KeyCode.K) && _isSprintable && _isSprintReset)
@@ -385,15 +449,6 @@ public class PlayerController : MonoBehaviour
         newScale.z = 1;
 
         transform.localScale = newScale;
-    }
-
-    private void fall()
-    {
-        Vector2 newVelocity;
-        newVelocity.x = _rigidbody.velocity.x;
-        newVelocity.y = -fallSpeed;
-
-        _rigidbody.velocity = newVelocity;
     }
 
     private void sprint()
