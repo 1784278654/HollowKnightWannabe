@@ -487,12 +487,12 @@ MonoBehaviour:
   fallGravityMultiplier: 2.8
   lowJumpGravityMultiplier: 2.2
   wallJumpBaseX: 1
-  wallJumpMaxX: 10
+  wallJumpMaxX: 7
   wallJumpBaseY: 1
-  wallJumpMaxY: 10
-  wallJumpSustainTime: 0.5
-  wallJumpSustainAccel: 20
-  wallJumpControlLock: 0.1
+  wallJumpMaxY: 7
+  wallJumpSustainTime: 0.1
+  wallJumpSustainAccel: 110
+  wallJumpControlLock: 0.06
 --- !u!1 &1941861638662376
 GameObject:
   m_ObjectHideFlags: 0
