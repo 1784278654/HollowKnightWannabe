@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour
     [Header("Wall Jump (Hold Extends Distance)")]
     public float wallJumpBaseX = 2.0f;      // tap: small horizontal push
     public float wallJumpMaxX = 7.5f;      // hold: can reach this
-    public float wallJumpY = 12.0f;     // vertical launch
+    public float wallJumpBaseY = 2.0f;     // vertical launch
+    public float wallJumpMaxY = 7.5f;
 
     public float wallJumpSustainTime = 0.12f;  // how long holding can extend X
     public float wallJumpSustainAccel = 80f;   // how fast X ramps up during sustain
@@ -150,6 +151,7 @@ public class PlayerController : MonoBehaviour
 
         int pushDir = -_wallDir;
         float targetX = pushDir * wallJumpMaxX;
+        float targetY = pushDir * wallJumpMaxY;
 
         float newX = Mathf.MoveTowards(
             _rigidbody.velocity.x,
@@ -157,7 +159,13 @@ public class PlayerController : MonoBehaviour
             wallJumpSustainAccel * Time.fixedDeltaTime
         );
 
-        _rigidbody.velocity = new Vector2(newX, _rigidbody.velocity.y);
+        float newY = Mathf.MoveTowards(
+            _rigidbody.velocity.y,
+            targetY,
+            wallJumpSustainAccel * Time.fixedDeltaTime
+        );
+
+        _rigidbody.velocity = new Vector2(newX, newY);
     }
 
 
@@ -495,7 +503,7 @@ public class PlayerController : MonoBehaviour
         int pushDir = -_wallDir;       // push away from wall
 
         // Instant jump begins NOW:
-        _rigidbody.velocity = new Vector2(pushDir * wallJumpBaseX, wallJumpY);
+        _rigidbody.velocity = new Vector2(pushDir * wallJumpBaseX, wallJumpBaseY);
 
         _isWallJumping = true;
         _wallJumpSustainUntil = Time.time + wallJumpSustainTime;
@@ -503,7 +511,7 @@ public class PlayerController : MonoBehaviour
 
         _isClimb = false; // exit climbing state if you have it
 
-        StartCoroutine(climbJumpCoroutine(.1f));
+        //StartCoroutine(climbJumpCoroutine(.1f));
     }
 
 
