@@ -502,6 +502,8 @@ public class PlayerController : MonoBehaviour
         _wallJumpLockUntil = Time.time + wallJumpControlLock;
 
         _isClimb = false; // exit climbing state if you have it
+
+        StartCoroutine(climbJumpCoroutine(.1f));
     }
 
 
