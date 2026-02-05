@@ -6089,6 +6089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1701969898617409398, guid: 3f189b4e844dd4c15bacde99d721494d,
         type: 3}
+      propertyPath: maxRunSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701969898617409398, guid: 3f189b4e844dd4c15bacde99d721494d,
+        type: 3}
       propertyPath: sprintSpeed
       value: 15
       objectReference: {fileID: 0}
@@ -6096,6 +6101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: attackUpRecoil.y
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701969898617409398, guid: 3f189b4e844dd4c15bacde99d721494d,
+        type: 3}
+      propertyPath: climbJumpForce.x
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1701969898617409398, guid: 3f189b4e844dd4c15bacde99d721494d,
         type: 3}
