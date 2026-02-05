@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
 
         int pushDir = -_wallDir;
         float targetX = pushDir * wallJumpMaxX;
-        float targetY = pushDir * wallJumpMaxY;
+        float targetY = wallJumpMaxY;
 
         float newX = Mathf.MoveTowards(
             _rigidbody.velocity.x,
