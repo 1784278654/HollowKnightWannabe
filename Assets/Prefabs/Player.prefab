@@ -458,12 +458,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  moveSpeed: 5
-  jumpSpeed: 14
+  moveSpeed: 6
+  jumpSpeed: 6
   jumpLeft: 0
-  climbJumpForce: {x: 8, y: 10}
+  climbJumpForce: {x: 5, y: 10}
   fallSpeed: 5
-  sprintSpeed: 10
+  sprintSpeed: 15
   sprintTime: 0.15
   sprintInterval: 0.4
   attackInterval: 0.3
@@ -473,13 +473,13 @@ MonoBehaviour:
   hurtRecoverTime: 1
   deathRecoil: {x: -3, y: 2}
   deathDelay: 1.5
-  attackUpRecoil: {x: 0, y: -1}
-  attackForwardRecoil: {x: -1, y: 0}
+  attackUpRecoil: {x: 0, y: -2}
+  attackForwardRecoil: {x: -2, y: 0}
   attackDownRecoil: {x: 0, y: 4}
   attackUpEffect: {fileID: 1646975930611572}
   attackForwardEffect: {fileID: 1410729049005502}
   attackDownEffect: {fileID: 1941861638662376}
-  maxRunSpeed: 8.5
+  maxRunSpeed: 5
   groundAccel: 120
   groundDecel: 180
   airAccel: 80
