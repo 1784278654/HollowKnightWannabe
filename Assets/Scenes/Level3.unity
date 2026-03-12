@@ -784,6 +784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5975850566546434029, guid: c1e93eb9cf973b040910ed5d38398257,
         type: 3}
+      propertyPath: rollAtkRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975850566546434029, guid: c1e93eb9cf973b040910ed5d38398257,
+        type: 3}
       propertyPath: meleeCooldown
       value: 1
       objectReference: {fileID: 0}
@@ -791,6 +796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: hurtRecoilTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975850566546434029, guid: c1e93eb9cf973b040910ed5d38398257,
+        type: 3}
+      propertyPath: rollAtkCooldown
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -6,11 +6,15 @@ public class BossController : EnemyController
 {
     public float walkSpeed;
     public float attackRange;
+    public float rollAtkRange;
     public float meleeCooldown;
+    public float rollAtkCooldown = 10f;
     public float phaseTwoHealthPercent;
     public int maxHealth;
 
     private bool _isAttackOnCooldown;
+    private bool _isRollingOnCooldown;
+    private bool _isRolling;
     private bool _isActionLocked;
     private bool _isPhaseTwo;
 
@@ -21,6 +25,8 @@ public class BossController : EnemyController
     private SpriteRenderer _spriteRenderer;
 
     [SerializeField] private Transform attackPoint;
+    [SerializeField] private Transform rollAtkPoint;
+
     [SerializeField] private Vector2 attackBoxSize = new Vector2(2f, 1f);
     [SerializeField] private LayerMask playerLayer;
 
@@ -36,6 +42,8 @@ public class BossController : EnemyController
             maxHealth = health;
 
         _isAttackOnCooldown = false;
+        _isRollingOnCooldown = false;
+        _isRolling = false;
         _isActionLocked = false;
         _isPhaseTwo = false;
 
@@ -70,6 +78,10 @@ public class BossController : EnemyController
             {
                 _currentState = new Idle();
             }
+            else if (!_isRollingOnCooldown)
+            {
+                _currentState = new Attack();
+            }
             else if (playerEnemyDistanceAbs > attackRange)
             {
                 _currentState = new Chase();
@@ -82,6 +94,16 @@ public class BossController : EnemyController
 
         if (!_isActionLocked)
             _currentState.Execute(this);
+
+        if (_isRollingOnCooldown && !_isRolling)
+        {
+            rollAtkCooldown -= Time.deltaTime;
+            if (rollAtkCooldown <= 0)
+            {
+                _isRollingOnCooldown = false;
+                rollAtkCooldown = 10f;
+            }
+        }
     }
 
     public override float behaveInterval()
@@ -145,6 +167,27 @@ public class BossController : EnemyController
         _animator.SetFloat("Speed", 0);
     }
 
+    IEnumerator rollToPlayer()
+    {
+        float moveDirection = Math.Abs(_playerEnemyDistance) < 0.1f ? 0 : Math.Sign(_playerEnemyDistance);
+
+        Vector2 newVelocity = _rigidbody.velocity;
+        newVelocity.x = moveDirection * walkSpeed * (_isPhaseTwo ? 1.25f : 1f) * 2f;
+        _rigidbody.velocity = newVelocity;
+
+        _animator.SetFloat("Speed", Math.Abs(newVelocity.x));
+
+        if (Math.Abs(_playerEnemyDistance) < rollAtkRange)
+        {
+            _animator.SetTrigger("attackChaseEnd");
+            stopMoving();
+            yield return new WaitForSeconds(0.4f);
+            _animator.SetBool("isRolling", false);
+            yield return new WaitForSeconds(1f);
+        }
+        //yield return null;
+    }
+
     public void attackPlayer()
     {
         if (_isAttackOnCooldown)
@@ -167,14 +210,19 @@ public class BossController : EnemyController
         _isAttackOnCooldown = true;
         _isActionLocked = true;
 
-        if (_isPhaseTwo)
+        if (!_isRollingOnCooldown && !_isRolling)
         {
-            _animator.SetTrigger("");
-            yield return new WaitForSeconds(0.2f);
+            _isRolling = true;
+            _animator.SetTrigger("attackChaseStart");
+            yield return new WaitForSeconds(0.3f);
+            _animator.SetBool("isRolling", true);
 
             
 
-            yield return new WaitForSeconds(behaveInterval());
+            yield return StartCoroutine(rollToPlayer());
+            //_animator.SetBool("isRolling", false);
+            _isRolling = false;
+            _isRollingOnCooldown = true;
         }
         else
         {
@@ -260,7 +308,8 @@ public class BossController : EnemyController
         public override void Execute(EnemyController enemyController)
         {
             BossController bossController = (BossController)enemyController;
-            bossController.stopMoving();
+            if(bossController._isRollingOnCooldown) bossController.stopMoving();
+            
             bossController.attackPlayer();
         }
     }
