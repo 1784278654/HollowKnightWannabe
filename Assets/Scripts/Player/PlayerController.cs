@@ -254,6 +254,7 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("PlayerInvulnerable");
 
         health = Math.Max(health - damage, 0);
+        SoundManager.Instance.PlaySFX("heroDamage");
 
         if (health == 0)
         {
@@ -480,10 +481,12 @@ public class PlayerController : MonoBehaviour
         jumpLeft -= 1;
         if (jumpLeft == 0)
         {
+            SoundManager.Instance.PlaySFX("heroWings");
             _animator.SetTrigger("IsJumpSecond");
         } 
         else if (jumpLeft == 1)
         {
+            SoundManager.Instance.PlaySFX("heroJump");
             _animator.SetTrigger("IsJumpFirst");
         }
     }
@@ -504,6 +507,7 @@ public class PlayerController : MonoBehaviour
 
         // Instant jump begins NOW:
         _rigidbody.velocity = new Vector2(pushDir * wallJumpBaseX, wallJumpBaseY);
+        SoundManager.Instance.PlaySFX("heroWallJump");
 
         _isWallJumping = true;
         _wallJumpSustainUntil = Time.time + wallJumpSustainTime;
@@ -567,6 +571,7 @@ public class PlayerController : MonoBehaviour
         }
 
         _animator.SetTrigger("IsSprint");
+        SoundManager.Instance.PlaySFX("heroDash");
         StartCoroutine(sprintCoroutine(sprintTime, sprintInterval));
     }
 
@@ -582,6 +587,7 @@ public class PlayerController : MonoBehaviour
 
     private void attack()
     {
+        SoundManager.Instance.PlaySFX("sword1");
         float verticalDirection = Input.GetAxis("Vertical");
         if (verticalDirection > 0)
             attackUp();
@@ -656,6 +662,8 @@ public class PlayerController : MonoBehaviour
             } 
             else if (layerName == "Enemy")
             {
+                SoundManager.Instance.PlaySFX("enemyDamage");
+
                 EnemyController enemyController = obj.GetComponent<EnemyController>();
                 if (enemyController != null)
                     enemyController.hurt(1);

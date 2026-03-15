@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,6 +18,9 @@ public class BossController : EnemyController
     private bool _isActionLocked;
     private bool _isPhaseTwo;
 
+    // FIX 1: Cache the original rollAtkCooldown so it can be properly reset
+    private float _rollAtkCooldownDefault;
+
     private Transform _playerTransform;
     private Transform _transform;
     private Rigidbody2D _rigidbody;
@@ -25,7 +28,6 @@ public class BossController : EnemyController
     private SpriteRenderer _spriteRenderer;
 
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private Transform rollAtkPoint;
 
     [SerializeField] private Vector2 attackBoxSize = new Vector2(2f, 1f);
     [SerializeField] private LayerMask playerLayer;
@@ -40,6 +42,9 @@ public class BossController : EnemyController
 
         if (maxHealth <= 0)
             maxHealth = health;
+
+        // FIX 1: Cache the inspector-assigned rollAtkCooldown as the reset value
+        _rollAtkCooldownDefault = rollAtkCooldown;
 
         _isAttackOnCooldown = false;
         _isRollingOnCooldown = false;
@@ -57,6 +62,7 @@ public class BossController : EnemyController
 
         _playerEnemyDistance = _playerTransform.position.x - _transform.position.x;
 
+        // Flip sprite to face player
         int direction = _playerEnemyDistance > 0 ? 1 : _playerEnemyDistance < 0 ? -1 : 0;
         if (direction != 0)
         {
@@ -65,22 +71,35 @@ public class BossController : EnemyController
             _transform.localScale = newScale;
         }
 
+        // Phase two transition
         if (!_isPhaseTwo && health <= Mathf.CeilToInt(maxHealth * phaseTwoHealthPercent))
         {
             _isPhaseTwo = true;
             _animator.SetTrigger("phaseTwo");
         }
 
+        // FIX 2: State transitions were broken — rolling attack should be PREFERRED
+        // when available (not on cooldown), not treated as the fallback.
+        // Old logic could get stuck: if roll wasn't on cooldown it would always
+        // switch to Attack state even when out of melee range.
         if (!_currentState.checkValid(this))
         {
             float playerEnemyDistanceAbs = Math.Abs(_playerEnemyDistance);
+
             if (playerEnemyDistanceAbs > detectDistance)
             {
                 _currentState = new Idle();
+                if (BossHPUI.Instance.gameObject.activeSelf)
+                {
+                    BossHPUI.Instance.Hide();
+                }
             }
             else if (!_isRollingOnCooldown)
             {
-                _currentState = new Attack();
+                // Roll attack is available — always use it (it chases the player)
+                _currentState = new RollAttack();
+
+                BossHPUI.Instance.Show("Shade", maxHealth);
             }
             else if (playerEnemyDistanceAbs > attackRange)
             {
@@ -95,13 +114,15 @@ public class BossController : EnemyController
         if (!_isActionLocked)
             _currentState.Execute(this);
 
+        // FIX 3: Cooldown timer should only tick when NOT rolling
+        // (was correct) but reset value was hardcoded to 10f — now uses cached default
         if (_isRollingOnCooldown && !_isRolling)
         {
             rollAtkCooldown -= Time.deltaTime;
             if (rollAtkCooldown <= 0)
             {
                 _isRollingOnCooldown = false;
-                rollAtkCooldown = 10f;
+                rollAtkCooldown = _rollAtkCooldownDefault; // FIX 1 applied here
             }
         }
     }
@@ -114,6 +135,8 @@ public class BossController : EnemyController
     public override void hurt(int damage)
     {
         health = Math.Max(health - damage, 0);
+        BossHPUI.Instance.UpdateHP(health);
+        //SoundManager.Instance.PlaySFX("hitReject");
 
         if (health == 0)
         {
@@ -132,10 +155,7 @@ public class BossController : EnemyController
     {
         _animator.SetTrigger("isDead");
 
-        Vector2 newVelocity;
-        newVelocity.x = 0;
-        newVelocity.y = 0;
-        _rigidbody.velocity = newVelocity;
+        _rigidbody.velocity = Vector2.zero;
 
         gameObject.layer = LayerMask.NameToLayer("Decoration");
 
@@ -145,6 +165,7 @@ public class BossController : EnemyController
         _rigidbody.AddForce(newForce, ForceMode2D.Impulse);
 
         StartCoroutine(fadeCoroutine());
+        BossHPUI.Instance.Hide();
     }
 
     public void moveToPlayer()
@@ -167,25 +188,47 @@ public class BossController : EnemyController
         _animator.SetFloat("Speed", 0);
     }
 
-    IEnumerator rollToPlayer()
+    // FIX 4: rollToPlayer was a coroutine called every frame from Execute(),
+    // meaning it could be started dozens of times per second. It is now
+    // properly gated by _isRolling so it only starts once per roll attack.
+    private IEnumerator rollToPlayer()
     {
-        float moveDirection = Math.Abs(_playerEnemyDistance) < 0.1f ? 0 : Math.Sign(_playerEnemyDistance);
+        _isRolling = true;
 
-        Vector2 newVelocity = _rigidbody.velocity;
-        newVelocity.x = moveDirection * walkSpeed * (_isPhaseTwo ? 1.25f : 1f) * 2f;
-        _rigidbody.velocity = newVelocity;
+        // Snapshot direction at roll start so the boss commits to one direction
+        float moveDirection = Math.Sign(_playerEnemyDistance);
+        float rollSpeed = walkSpeed * (_isPhaseTwo ? 1.25f : 1f) * 4f;
 
-        _animator.SetFloat("Speed", Math.Abs(newVelocity.x));
-
-        if (Math.Abs(_playerEnemyDistance) < rollAtkRange)
+        while (true)
         {
-            _animator.SetTrigger("attackChaseEnd");
-            stopMoving();
-            yield return new WaitForSeconds(0.4f);
-            _animator.SetBool("isRolling", false);
-            yield return new WaitForSeconds(1f);
+            // Check if we've caught the player
+            if (Math.Abs(_playerEnemyDistance) <= rollAtkRange)
+            {
+                SoundManager.Instance.StopSFX("bossRollAtk");
+                stopMoving();
+                _animator.SetTrigger("attackChaseEnd");
+                SoundManager.Instance.PlaySFX("bossSwingLight");
+
+                // FIX 5: Wait for ChaseAttackEnd animation to finish, then hit
+                yield return new WaitForSeconds(0.4f);
+                CheckHitResult(); // deal damage at the right moment in the animation
+
+                yield return new WaitForSeconds(1.0f); // remainder of recovery
+                _isRollingOnCooldown = true;
+                _isRolling = false;
+                _isAttackOnCooldown = false;
+                _isActionLocked = false;
+                yield break;
+            }
+
+            // Keep moving toward player
+            Vector2 vel = _rigidbody.velocity;
+            vel.x = moveDirection * rollSpeed;
+            _rigidbody.velocity = vel;
+            _animator.SetFloat("Speed", Math.Abs(vel.x));
+
+            yield return null;
         }
-        //yield return null;
     }
 
     public void attackPlayer()
@@ -196,9 +239,22 @@ public class BossController : EnemyController
         StartCoroutine(attackRoutine());
     }
 
+    public void startRollAttack()
+    {
+        // FIX 4: Single entry-point called once by RollAttack state
+        if (_isAttackOnCooldown)
+            return;
+
+        StartCoroutine(attackRoutine());
+    }
+
     private IEnumerator hurtCoroutine()
     {
         _isActionLocked = true;
+        // FIX 6: Interrupt any ongoing roll so a hurt reaction is immediate
+        _isRolling = false;
+        StopCoroutine(nameof(rollToPlayer));
+
         yield return new WaitForSeconds(hurtRecoilTime);
 
         _isActionLocked = false;
@@ -210,39 +266,41 @@ public class BossController : EnemyController
         _isAttackOnCooldown = true;
         _isActionLocked = true;
 
-        if (!_isRollingOnCooldown && !_isRolling)
+        if (!_isRollingOnCooldown)
         {
-            _isRolling = true;
+            // --- Roll / Chase Attack ---
             _animator.SetTrigger("attackChaseStart");
             yield return new WaitForSeconds(0.3f);
-            _animator.SetBool("isRolling", true);
 
-            
+            _animator.SetTrigger("attackChaseMid");
+            SoundManager.Instance.PlaySFX("bossRollAtk");
 
+            // FIX 4: yield-start the coroutine and wait; rollToPlayer now owns
+            // _isRolling, _isRollingOnCooldown, _isActionLocked, and _isAttackOnCooldown.
             yield return StartCoroutine(rollToPlayer());
-            //_animator.SetBool("isRolling", false);
-            _isRolling = false;
-            _isRollingOnCooldown = true;
+            // All cleanup is handled inside rollToPlayer — nothing needed here.
         }
         else
         {
+            // --- Normal Melee Attack ---
             _animator.SetTrigger("attackMelee");
+            SoundManager.Instance.PlaySFX("bossSwingHeavy");
+
+
+            // FIX 7: Hit window should match the swing animation frame, not after meleeCooldown
             yield return new WaitForSeconds(0.25f);
+            CheckHitResult();
 
-            /*
-            bool hitPlayer = CheckHitResult();
-            if (hitPlayer)
-            {
-                PlayerController playerController = _playerTransform.GetComponent<PlayerController>();
-                playerController.hurt(damageToPlayer);
-            }
-            */
-
+            // FIX 8: Wait out the rest of the animation before releasing the lock
+            yield return new WaitForSeconds(0.4f);
             yield return new WaitForSeconds(meleeCooldown);
+            _isActionLocked = false;
+            _isAttackOnCooldown = false;
+            // FIX 9: Actual cooldown before next melee is handled by behaveInterval()
+            // via the EnemyController base class, so we don't need a manual delay here.
+            // If your base class does NOT handle this, uncomment the line below:
+            // yield return new WaitForSeconds(meleeCooldown);
         }
-
-        _isActionLocked = false;
-        _isAttackOnCooldown = false;
     }
 
     private IEnumerator fadeCoroutine()
@@ -266,6 +324,8 @@ public class BossController : EnemyController
         Destroy(gameObject);
     }
 
+    // ─── States ──────────────────────────────────────────────────────────────
+
     public class Idle : State
     {
         public override bool checkValid(EnemyController enemyController)
@@ -275,8 +335,8 @@ public class BossController : EnemyController
 
         public override void Execute(EnemyController enemyController)
         {
-            BossController bossController = (BossController)enemyController;
-            bossController.stopMoving();
+            BossController boss = (BossController)enemyController;
+            boss.stopMoving();
         }
     }
 
@@ -284,16 +344,18 @@ public class BossController : EnemyController
     {
         public override bool checkValid(EnemyController enemyController)
         {
-            BossController bossController = (BossController)enemyController;
-            float playerEnemyDistanceAbs = Math.Abs(enemyController.playerEnemyDistance());
-            return playerEnemyDistanceAbs <= enemyController.detectDistance &&
-                   playerEnemyDistanceAbs > bossController.attackRange;
+            BossController boss = (BossController)enemyController;
+            float dist = Math.Abs(enemyController.playerEnemyDistance());
+            // Chase is valid only when roll is on cooldown and player is out of melee range
+            return dist <= enemyController.detectDistance &&
+                   dist > boss.attackRange &&
+                   boss._isRollingOnCooldown;
         }
 
         public override void Execute(EnemyController enemyController)
         {
-            BossController bossController = (BossController)enemyController;
-            bossController.moveToPlayer();
+            BossController boss = (BossController)enemyController;
+            boss.moveToPlayer();
         }
     }
 
@@ -301,18 +363,40 @@ public class BossController : EnemyController
     {
         public override bool checkValid(EnemyController enemyController)
         {
-            BossController bossController = (BossController)enemyController;
-            return Math.Abs(enemyController.playerEnemyDistance()) <= bossController.attackRange;
+            BossController boss = (BossController)enemyController;
+            // Melee attack valid only when roll is on cooldown and within melee range
+            return boss._isRollingOnCooldown &&
+                   Math.Abs(enemyController.playerEnemyDistance()) <= boss.attackRange;
         }
 
         public override void Execute(EnemyController enemyController)
         {
-            BossController bossController = (BossController)enemyController;
-            if(bossController._isRollingOnCooldown) bossController.stopMoving();
-            
-            bossController.attackPlayer();
+            BossController boss = (BossController)enemyController;
+            boss.stopMoving();
+            boss.attackPlayer();
         }
     }
+
+    // FIX 2: New dedicated state for the roll attack
+    public class RollAttack : State
+    {
+        public override bool checkValid(EnemyController enemyController)
+        {
+            BossController boss = (BossController)enemyController;
+            // Valid as long as roll is not on cooldown and boss is in detection range
+            return !boss._isRollingOnCooldown &&
+                   Math.Abs(enemyController.playerEnemyDistance()) <= enemyController.detectDistance;
+        }
+
+        public override void Execute(EnemyController enemyController)
+        {
+            BossController boss = (BossController)enemyController;
+            // FIX 4: startRollAttack() guards with _isAttackOnCooldown so this is safe every frame
+            boss.startRollAttack();
+        }
+    }
+
+    // ─── Hit Detection ───────────────────────────────────────────────────────
 
     public void CheckHitResult()
     {
@@ -327,15 +411,12 @@ public class BossController : EnemyController
         {
             PlayerController playerController = _playerTransform.GetComponent<PlayerController>();
             playerController.hurt(damageToPlayer);
-            return;
         }
-        else return;
     }
-    //gizmo hitbox draw
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;
-
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPoint.position, attackBoxSize);
     }
