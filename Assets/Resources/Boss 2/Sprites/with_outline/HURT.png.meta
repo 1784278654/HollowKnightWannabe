@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5edeeca8ddd1fae499aa095d78472ac0
+guid: 6a3e0225ac3e3924d92bc66f781f4fad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack 2_0
+      name: HURT_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 247
-        height: 87
+        x: 34
+        y: 22
+        width: 24
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 533985f6956956646ab31f4eb8083efb
-      internalID: -208505699
+      spriteID: aef6b57ea3e5c764da9e90efdd6697db
+      internalID: 937269516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 2_1
+      name: HURT_1
       rect:
         serializedVersion: 2
-        x: 247
-        y: 0
-        width: 247
-        height: 87
+        x: 124
+        y: 22
+        width: 32
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6daf3b7e54ae0944901fb694c9404c9
-      internalID: 1504519341
+      spriteID: 0288f991ce6e4374e8fa360f7d0981b7
+      internalID: -1269560579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 2_2
+      name: HURT_2
       rect:
         serializedVersion: 2
-        x: 494
-        y: 0
-        width: 247
-        height: 87
+        x: 220
+        y: 22
+        width: 32
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 879e7866b6b83d94f90078b4ad9fd954
-      internalID: 1367776754
+      spriteID: 4653e1a16db61934aa93ee31b99bda32
+      internalID: -1405646293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 2_3
+      name: HURT_3
       rect:
         serializedVersion: 2
-        x: 741
-        y: 0
-        width: 247
-        height: 87
+        x: 319
+        y: 22
+        width: 29
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,113 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93a0df5096b13ad46b909c3c41ff3a7e
-      internalID: -331390922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2_4
-      rect:
-        serializedVersion: 2
-        x: 988
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cea45a618927ca4ca3b2d1b9d4c3540
-      internalID: 1240101984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2_5
-      rect:
-        serializedVersion: 2
-        x: 1235
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b99992a06c67de48994c07d83cb49ed
-      internalID: 1544203251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2_6
-      rect:
-        serializedVersion: 2
-        x: 1482
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7fadd2c08be27845aecd1a190211523
-      internalID: 149998889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2_7
-      rect:
-        serializedVersion: 2
-        x: 1729
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7d4914dc31a776419eb67cf613d8be3
-      internalID: -1812081231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 2_8
-      rect:
-        serializedVersion: 2
-        x: 1976
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 858fa40fa778cae499e3f2519757def9
-      internalID: -2000552354
+      spriteID: 18c700d9c6d121c4aad4a0e348f73cd0
+      internalID: 74726687
       vertices: []
       indices: 
       edges: []
@@ -296,15 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack 2_0: -208505699
-      Attack 2_1: 1504519341
-      Attack 2_2: 1367776754
-      Attack 2_3: -331390922
-      Attack 2_4: 1240101984
-      Attack 2_5: 1544203251
-      Attack 2_6: 149998889
-      Attack 2_7: -1812081231
-      Attack 2_8: -2000552354
+      HURT_0: 937269516
+      HURT_1: -1269560579
+      HURT_2: -1405646293
+      HURT_3: 74726687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

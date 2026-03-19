@@ -772,6 +772,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss1
       objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892898, guid: c1e93eb9cf973b040910ed5d38398257,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5975850566546434029, guid: c1e93eb9cf973b040910ed5d38398257,
         type: 3}
       propertyPath: attackRange
@@ -838,6 +843,188 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1272311519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &422554344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1200887564}
+    m_Modifications:
+    - target: {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: meleePoint
+      value: 
+      objectReference: {fileID: 1122956570}
+    - target: {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: spinCenter
+      value: 
+      objectReference: {fileID: 680344678}
+    - target: {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: destroyDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: damageToPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: detectDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: leapImpactPoint
+      value: 
+      objectReference: {fileID: 983826736}
+    - target: {fileID: 3300419883422892896, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -893786104, guid: 028d5a7087df6fc4a9233d0b536b821e,
+        type: 3}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892898, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_Name
+      value: Boss2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3300419883422892898, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271492947393462012, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_Name
+      value: MeleePoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793397622384222702, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793397622384222702, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206431512081048442, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206431512081048442, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206431512081048442, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.24875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206431512081048442, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.52
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 680344678}
+    - targetCorrespondingSourceObject: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 983826736}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3300419883422892898, guid: 913713defc6a03e4f94e32acb2ed820f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1909053873}
+  m_SourcePrefab: {fileID: 100100000, guid: 913713defc6a03e4f94e32acb2ed820f, type: 3}
 --- !u!1 &429841848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1239,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 54.2, y: 1.87}
   m_EdgeRadius: 0
+--- !u!1 &680344677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680344678}
+  m_Layer: 10
+  m_Name: SpinCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &680344678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680344677}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1909053867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &924954735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3300419883422892897, guid: c1e93eb9cf973b040910ed5d38398257,
@@ -1142,6 +1360,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &983826735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983826736}
+  m_Layer: 10
+  m_Name: LeapImpactPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &983826736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983826735}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1909053867}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993811486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1623,12 @@ Transform:
   - {fileID: 1396599291}
   m_Father: {fileID: 1272311519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1122956570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7793397622384222702, guid: 913713defc6a03e4f94e32acb2ed820f,
+    type: 3}
+  m_PrefabInstance: {fileID: 422554344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1200241255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,6 +1744,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 924954735}
+  - {fileID: 1909053867}
   m_Father: {fileID: 1272311519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1200887566
@@ -1543,6 +1799,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1243581517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3300419883422892898, guid: 913713defc6a03e4f94e32acb2ed820f,
+    type: 3}
+  m_PrefabInstance: {fileID: 422554344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1272311518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,6 +2789,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1909053867 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
+    type: 3}
+  m_PrefabInstance: {fileID: 422554344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1909053873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243581517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e459fa7acedc94ea34692fe58806f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  detectDistance: 10
+  damageToPlayer: 1
+  hurtRecoil: {x: 0, y: 0}
+  hurtRecoilTime: 0
+  deathForce: {x: 0, y: 0}
+  destroyDelay: 2
+  bossDisplayName: Lost Vessel
+  walkSpeed: 3.5
+  chargeSpeed: 16
+  jumpForceX: 10
+  jumpForceY: 20
+  meleeRange: 2.8
+  chargeRange: 9
+  fireRange: 14
+  slashWindup: 0.25
+  slashActiveWindow: 0.18
+  slashRecovery: 0.35
+  slashGapBetween: 0.12
+  jumpRiseTime: 0.5
+  jumpFallTime: 0.6
+  jumpRecovery: 0.5
+  chargeWindup: 0.35
+  chargeDuration: 0.4
+  chargeRecovery: 0.5
+  fireWindup: 0.3
+  fireRecovery: 0.4
+  betweenAttacks: 0.6
+  slashDamage: 14
+  jumpDamage: 20
+  chargeDamage: 18
+  meleePoint: {fileID: 1909053867}
+  meleeBoxSize: {x: 4.5, y: 1.4}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  projectilePrefab: {fileID: 1896642461863131162, guid: 3c0b17efd721e466cab6682f2b8ed6cd,
+    type: 3}
+  projectileSpawn: {fileID: 1909053867}
+  phaseTwoThreshold: 0.5
+  phase2SpeedMult: 1.3
+  phase2TimingMult: 0.75
+  phase2BetweenMult: 0.65
+  maxHealth: 10
 --- !u!1 &1922686047
 GameObject:
   m_ObjectHideFlags: 0

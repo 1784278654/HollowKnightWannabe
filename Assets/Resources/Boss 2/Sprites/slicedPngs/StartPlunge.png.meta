@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 51bd05c382991b14eae909fd2c803e36
+guid: 9b2871d9849f32a448385ec43048de22
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,211 +97,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack 1_0
+      name: StartPlunge_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 247
-        height: 87
+        width: 212.83333
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76ac20169d6c3414db8b43a31c6d96a0
-      internalID: -100350246
+      spriteID: 8a09740de70121f4caf43d425e369fda
+      internalID: 794462287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 1_1
+      name: StartPlunge_1
       rect:
         serializedVersion: 2
-        x: 247
+        x: 212
         y: 0
-        width: 247
-        height: 87
+        width: 212.83333
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9941618f120c0434fb0a743530e9366e
-      internalID: 1513258796
+      spriteID: 7fb732071f73f364c9cd8cd85532b371
+      internalID: 1759164419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 1_2
+      name: StartPlunge_2
       rect:
         serializedVersion: 2
-        x: 494
+        x: 424
         y: 0
-        width: 247
-        height: 87
+        width: 212.83333
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6caecafd67098c44097f6b355457a8d4
-      internalID: -29287507
+      spriteID: d0255b7ec71518848afc7b7a9d39fba3
+      internalID: -686423172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 1_3
+      name: StartPlunge_3
       rect:
         serializedVersion: 2
-        x: 741
+        x: 636
         y: 0
-        width: 247
-        height: 87
+        width: 212.83333
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3907ad29170233f4db21b5b01e91a863
-      internalID: 259559350
+      spriteID: 2069069715698514dbea689c877bb36b
+      internalID: -1755749582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 1_4
+      name: StartPlunge_4
       rect:
         serializedVersion: 2
-        x: 988
+        x: 848
         y: 0
-        width: 247
-        height: 87
+        width: 212.83333
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f47034987115fee4cb5fedbb30a425ec
-      internalID: 1541806299
+      spriteID: 056f2e96b3d4cbb438b6f9119ae28640
+      internalID: 610950293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 1_5
+      name: StartPlunge_5
       rect:
         serializedVersion: 2
-        x: 1235
+        x: 1060
         y: 0
-        width: 247
-        height: 87
+        width: 212.83333
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bad8942472cd3944cafb9b7587fc2110
-      internalID: 879028108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_6
-      rect:
-        serializedVersion: 2
-        x: 1482
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a1106b99a8206b46bd2e7f8def787ca
-      internalID: 256758559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_7
-      rect:
-        serializedVersion: 2
-        x: 1729
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bd4e3ecc4c117147baaa6b1f3e99ca2
-      internalID: -1419136771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_8
-      rect:
-        serializedVersion: 2
-        x: 1976
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca160b24e1c9fe348ae21fda79e441e0
-      internalID: 1254758653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_9
-      rect:
-        serializedVersion: 2
-        x: 2223
-        y: 0
-        width: 247
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e66b27d75ad49384283d9bebaa5a8b95
-      internalID: -1646769221
+      spriteID: 818dea9062d8bcd44902b69936340ef6
+      internalID: -948460919
       vertices: []
       indices: 
       edges: []
@@ -317,16 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack 1_0: -100350246
-      Attack 1_1: 1513258796
-      Attack 1_2: -29287507
-      Attack 1_3: 259559350
-      Attack 1_4: 1541806299
-      Attack 1_5: 879028108
-      Attack 1_6: 256758559
-      Attack 1_7: -1419136771
-      Attack 1_8: 1254758653
-      Attack 1_9: -1646769221
+      StartPlunge_0: 794462287
+      StartPlunge_1: 1759164419
+      StartPlunge_2: -686423172
+      StartPlunge_3: -1755749582
+      StartPlunge_4: 610950293
+      StartPlunge_5: -948460919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

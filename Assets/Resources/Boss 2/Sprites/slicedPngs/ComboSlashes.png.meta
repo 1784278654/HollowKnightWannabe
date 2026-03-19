@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 091381447cb490741badb5eb898f15ba
+guid: 156033de816a3664fb3c86cf7d7f69df
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,295 +97,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: ComboSlashes_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 0
-        width: 77
-        height: 87
+        x: 0
+        y: 473.3333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5443d1960c3aa8d4ebedb826a6890351
-      internalID: 1940473277
+      spriteID: 0943c0f002db0524286fad9b7ebb32c8
+      internalID: 1579357549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: ComboSlashes_1
       rect:
         serializedVersion: 2
-        x: 293
-        y: 0
-        width: 76
-        height: 87
+        x: 498
+        y: 473.3333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de731e639d380084faf586656bece341
-      internalID: -1456734075
+      spriteID: d864dd5247dd7064395c70adc7c7644b
+      internalID: -1876203682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: ComboSlashes_2
       rect:
         serializedVersion: 2
-        x: 539
-        y: 0
-        width: 76
-        height: 87
+        x: 996
+        y: 473.3333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad7a58cf959ea854794997040b3af928
-      internalID: 1614305608
+      spriteID: f46f234c4ca168a45bdc76072bc20c0e
+      internalID: 1746289252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: ComboSlashes_3
       rect:
         serializedVersion: 2
-        x: 786
-        y: 0
-        width: 76
-        height: 87
+        x: 1494
+        y: 473.3333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b88ce0f34d67a0449d1409c275bc029
-      internalID: -515504673
+      spriteID: 0392910dd99253b4aa72143532a744c8
+      internalID: -1854995868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_4
+      name: ComboSlashes_4
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 0
-        width: 76
-        height: 87
+        x: 0
+        y: 237.33333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38cdb996381604a4880ba377c6185a76
-      internalID: 2138378304
+      spriteID: 042b01926db578847afbd905ebc3a4ed
+      internalID: -906026533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_5
+      name: ComboSlashes_5
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 0
-        width: 76
-        height: 87
+        x: 498
+        y: 237.33333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98c3558cdfe03a945a5258f3610245ff
-      internalID: 780484735
+      spriteID: 73432c87cd1e430408970b9b787dadd9
+      internalID: 337706920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_6
+      name: ComboSlashes_6
       rect:
         serializedVersion: 2
-        x: 1527
-        y: 0
-        width: 76
-        height: 87
+        x: 996
+        y: 237.33333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c466fcf5b2a9be498781fb3a053f589
-      internalID: -1138156839
+      spriteID: 4157413a9eb0d6a4d8da524b7ad5ec9e
+      internalID: -1255681901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_7
+      name: ComboSlashes_7
       rect:
         serializedVersion: 2
-        x: 1774
-        y: 0
-        width: 77
-        height: 87
+        x: 1494
+        y: 237.33333
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66bcaa24d2981fd4a89c5e017f09dbe6
-      internalID: -64458178
+      spriteID: d2a94b38cc1a84e44999b39ca4c44eaf
+      internalID: -460594277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_8
+      name: ComboSlashes_8
       rect:
         serializedVersion: 2
-        x: 2022
-        y: 0
-        width: 76
-        height: 87
+        x: 0
+        y: 1.3333282
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7ec1d010de56c4c9c7624ca5a9e25c
-      internalID: 1906280354
+      spriteID: f09f20fef3d44c24ca66a11b7a44c02e
+      internalID: -595132729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_9
+      name: ComboSlashes_9
       rect:
         serializedVersion: 2
-        x: 2268
-        y: 0
-        width: 76
-        height: 87
+        x: 498
+        y: 1.3333282
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5cf09b2a1eeeaf4c8f496b792c3723e
-      internalID: 19909696
+      spriteID: eabd76be5f7844f40949c4fa8f394715
+      internalID: -836953709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_10
+      name: ComboSlashes_10
       rect:
         serializedVersion: 2
-        x: 2515
-        y: 0
-        width: 76
-        height: 87
+        x: 996
+        y: 1.3333282
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c420307ea45b5c4daee9ae2b1ed43da
-      internalID: -1207662948
+      spriteID: 97344812cd0f0eb42baae080ff28ba37
+      internalID: 1959797844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_11
+      name: ComboSlashes_11
       rect:
         serializedVersion: 2
-        x: 2763
-        y: 0
-        width: 76
-        height: 87
+        x: 1494
+        y: 1.3333282
+        width: 498.25
+        height: 236.66667
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e4907c5efcc4e942979266667eed7c0
-      internalID: -1646024886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_12
-      rect:
-        serializedVersion: 2
-        x: 3010
-        y: 0
-        width: 76
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31b9b046a67259b468b4d010b1af941a
-      internalID: 2083733224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_13
-      rect:
-        serializedVersion: 2
-        x: 3256
-        y: 0
-        width: 76
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f8e3f5be4f681f44af95c9aea89c682
-      internalID: -145335652
+      spriteID: 104601642d78c8e46b66113e647f8dbb
+      internalID: -581618329
       vertices: []
       indices: 
       edges: []
@@ -401,20 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_0: 1940473277
-      idle_1: -1456734075
-      idle_10: -1207662948
-      idle_11: -1646024886
-      idle_12: 2083733224
-      idle_13: -145335652
-      idle_2: 1614305608
-      idle_3: -515504673
-      idle_4: 2138378304
-      idle_5: 780484735
-      idle_6: -1138156839
-      idle_7: -64458178
-      idle_8: 1906280354
-      idle_9: 19909696
+      ComboSlashes_0: 1579357549
+      ComboSlashes_1: -1876203682
+      ComboSlashes_10: 1959797844
+      ComboSlashes_11: -581618329
+      ComboSlashes_2: 1746289252
+      ComboSlashes_3: -1854995868
+      ComboSlashes_4: -906026533
+      ComboSlashes_5: 337706920
+      ComboSlashes_6: -1255681901
+      ComboSlashes_7: -460594277
+      ComboSlashes_8: -595132729
+      ComboSlashes_9: -836953709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 091381447cb490741badb5eb898f15ba
+guid: 590a191c185238c46aa784b415e52f0f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,295 +97,379 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: Death_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 0
-        width: 77
-        height: 87
+        x: 0
+        y: 346.6667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5443d1960c3aa8d4ebedb826a6890351
-      internalID: 1940473277
+      spriteID: 5bf01a63706f3c742878802547080a7c
+      internalID: 230242296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: Death_1
       rect:
         serializedVersion: 2
-        x: 293
-        y: 0
-        width: 76
-        height: 87
+        x: 312
+        y: 346.6667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de731e639d380084faf586656bece341
-      internalID: -1456734075
+      spriteID: ac9a7bf5d486e3a45ad4fb6e24462440
+      internalID: 1813735660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: Death_2
       rect:
         serializedVersion: 2
-        x: 539
-        y: 0
-        width: 76
-        height: 87
+        x: 624
+        y: 346.6667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad7a58cf959ea854794997040b3af928
-      internalID: 1614305608
+      spriteID: 9c06b6583d32f644faf525d4467b7b42
+      internalID: -1389529495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: Death_3
       rect:
         serializedVersion: 2
-        x: 786
-        y: 0
-        width: 76
-        height: 87
+        x: 936
+        y: 346.6667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b88ce0f34d67a0449d1409c275bc029
-      internalID: -515504673
+      spriteID: 50301f3e8b01ac440bc891d44f807855
+      internalID: 282435941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_4
+      name: Death_4
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 0
-        width: 76
-        height: 87
+        x: 1248
+        y: 346.6667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38cdb996381604a4880ba377c6185a76
-      internalID: 2138378304
+      spriteID: 6dfd1df57b60add4b991498722c942b3
+      internalID: -455523372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_5
+      name: Death_5
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 0
-        width: 76
-        height: 87
+        x: 1560
+        y: 346.6667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98c3558cdfe03a945a5258f3610245ff
-      internalID: 780484735
+      spriteID: 31aaccc894dabbc49ad09d214ee1e919
+      internalID: 432662055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_6
+      name: Death_6
       rect:
         serializedVersion: 2
-        x: 1527
-        y: 0
-        width: 76
-        height: 87
+        x: 0
+        y: 173.66667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c466fcf5b2a9be498781fb3a053f589
-      internalID: -1138156839
+      spriteID: 107d0101d56b02b429819ea6cda4cdec
+      internalID: -118843962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_7
+      name: Death_7
       rect:
         serializedVersion: 2
-        x: 1774
-        y: 0
-        width: 77
-        height: 87
+        x: 312
+        y: 173.66667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66bcaa24d2981fd4a89c5e017f09dbe6
-      internalID: -64458178
+      spriteID: 449fbaf8041ccee44b992c83b3b51bc6
+      internalID: 505315819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_8
+      name: Death_8
       rect:
         serializedVersion: 2
-        x: 2022
-        y: 0
-        width: 76
-        height: 87
+        x: 624
+        y: 173.66667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7ec1d010de56c4c9c7624ca5a9e25c
-      internalID: 1906280354
+      spriteID: 70f83a69af564c5449f250291e3aac77
+      internalID: -451346172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_9
+      name: Death_9
       rect:
         serializedVersion: 2
-        x: 2268
-        y: 0
-        width: 76
-        height: 87
+        x: 936
+        y: 173.66667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5cf09b2a1eeeaf4c8f496b792c3723e
-      internalID: 19909696
+      spriteID: 7fc30fea2964a99459716e6b56c526e9
+      internalID: -1562192907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_10
+      name: Death_10
       rect:
         serializedVersion: 2
-        x: 2515
-        y: 0
-        width: 76
-        height: 87
+        x: 1248
+        y: 173.66667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c420307ea45b5c4daee9ae2b1ed43da
-      internalID: -1207662948
+      spriteID: eb812022d25f05d4f848d0484e5182ca
+      internalID: -1692626972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_11
+      name: Death_11
       rect:
         serializedVersion: 2
-        x: 2763
-        y: 0
-        width: 76
-        height: 87
+        x: 1560
+        y: 173.66667
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e4907c5efcc4e942979266667eed7c0
-      internalID: -1646024886
+      spriteID: 2b98dc872a1750349894105ddc09142a
+      internalID: -1810447808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_12
+      name: Death_12
       rect:
         serializedVersion: 2
-        x: 3010
-        y: 0
-        width: 76
-        height: 87
+        x: 0
+        y: 0.66667175
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31b9b046a67259b468b4d010b1af941a
-      internalID: 2083733224
+      spriteID: 2ecb61fff449d73439752c4a1bc226b2
+      internalID: -386551157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_13
+      name: Death_13
       rect:
         serializedVersion: 2
-        x: 3256
-        y: 0
-        width: 76
-        height: 87
+        x: 312
+        y: 0.66667175
+        width: 312
+        height: 173.33333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f8e3f5be4f681f44af95c9aea89c682
-      internalID: -145335652
+      spriteID: 705123e2c544803448bb3b9ef96a13d6
+      internalID: -2137142708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_14
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0.66667175
+        width: 312
+        height: 173.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8be6d5c0b4c554ea5d3a655f02564a
+      internalID: -1251437315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_15
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 0.66667175
+        width: 312
+        height: 173.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4454a2f52fe6dac4883553e0edd9a3da
+      internalID: -253959856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_16
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0.66667175
+        width: 312
+        height: 173.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec5226bf31752564493c8343f14486e9
+      internalID: 298066478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_17
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 0.66667175
+        width: 312
+        height: 173.33333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315d565270482f34798f60e3de8370cd
+      internalID: -1687027818
       vertices: []
       indices: 
       edges: []
@@ -401,20 +485,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_0: 1940473277
-      idle_1: -1456734075
-      idle_10: -1207662948
-      idle_11: -1646024886
-      idle_12: 2083733224
-      idle_13: -145335652
-      idle_2: 1614305608
-      idle_3: -515504673
-      idle_4: 2138378304
-      idle_5: 780484735
-      idle_6: -1138156839
-      idle_7: -64458178
-      idle_8: 1906280354
-      idle_9: 19909696
+      Death_0: 230242296
+      Death_1: 1813735660
+      Death_10: -1692626972
+      Death_11: -1810447808
+      Death_12: -386551157
+      Death_13: -2137142708
+      Death_14: -1251437315
+      Death_15: -253959856
+      Death_16: 298066478
+      Death_17: -1687027818
+      Death_2: -1389529495
+      Death_3: 282435941
+      Death_4: -455523372
+      Death_5: 432662055
+      Death_6: -118843962
+      Death_7: 505315819
+      Death_8: -451346172
+      Death_9: -1562192907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

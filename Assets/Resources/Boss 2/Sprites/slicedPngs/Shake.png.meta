@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 091381447cb490741badb5eb898f15ba
+guid: 765064355b6442f47859240e414b9a86
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,295 +97,295 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: Shake_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 0
-        width: 77
-        height: 87
+        x: 0
+        y: 227
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5443d1960c3aa8d4ebedb826a6890351
-      internalID: 1940473277
+      spriteID: 109dd53d642e72044b72cb58974d1065
+      internalID: -1055373370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: Shake_1
       rect:
         serializedVersion: 2
-        x: 293
-        y: 0
-        width: 76
-        height: 87
+        x: 255
+        y: 227
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de731e639d380084faf586656bece341
-      internalID: -1456734075
+      spriteID: 41a179121c947e5479321bd1b1ac5aea
+      internalID: 1150258693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: Shake_2
       rect:
         serializedVersion: 2
-        x: 539
-        y: 0
-        width: 76
-        height: 87
+        x: 510
+        y: 227
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad7a58cf959ea854794997040b3af928
-      internalID: 1614305608
+      spriteID: b614c3722340d4946b87c004706873ae
+      internalID: -2107910844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: Shake_3
       rect:
         serializedVersion: 2
-        x: 786
-        y: 0
-        width: 76
-        height: 87
+        x: 765
+        y: 227
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b88ce0f34d67a0449d1409c275bc029
-      internalID: -515504673
+      spriteID: 50891c25b770cd24ca495e863dd2ecb2
+      internalID: 362051989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_4
+      name: Shake_4
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 0
-        width: 76
-        height: 87
+        x: 1020
+        y: 227
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38cdb996381604a4880ba377c6185a76
-      internalID: 2138378304
+      spriteID: 6fd7998ad82a49b4f9fe2809b6185f82
+      internalID: -410712125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_5
+      name: Shake_5
       rect:
         serializedVersion: 2
-        x: 1281
-        y: 0
-        width: 76
-        height: 87
+        x: 1275
+        y: 227
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98c3558cdfe03a945a5258f3610245ff
-      internalID: 780484735
+      spriteID: 78fa10cc38811c4458f9b49332f8ee65
+      internalID: -209854982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_6
+      name: Shake_6
       rect:
         serializedVersion: 2
-        x: 1527
-        y: 0
-        width: 76
-        height: 87
+        x: 1530
+        y: 227
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c466fcf5b2a9be498781fb3a053f589
-      internalID: -1138156839
+      spriteID: f148ee3d267318a4a99083cb332d64e1
+      internalID: 414676936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_7
+      name: Shake_7
       rect:
         serializedVersion: 2
-        x: 1774
+        x: 0
         y: 0
-        width: 77
-        height: 87
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66bcaa24d2981fd4a89c5e017f09dbe6
-      internalID: -64458178
+      spriteID: 7f4ea4be7588719429e189d831545b25
+      internalID: 1783001653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_8
+      name: Shake_8
       rect:
         serializedVersion: 2
-        x: 2022
+        x: 255
         y: 0
-        width: 76
-        height: 87
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7ec1d010de56c4c9c7624ca5a9e25c
-      internalID: 1906280354
+      spriteID: e3988ab54552b5e4288a28139b601beb
+      internalID: 803737873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_9
+      name: Shake_9
       rect:
         serializedVersion: 2
-        x: 2268
+        x: 510
         y: 0
-        width: 76
-        height: 87
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5cf09b2a1eeeaf4c8f496b792c3723e
-      internalID: 19909696
+      spriteID: 8a86f64786771444f9dbd2d05fcbff91
+      internalID: 1388706438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_10
+      name: Shake_10
       rect:
         serializedVersion: 2
-        x: 2515
+        x: 765
         y: 0
-        width: 76
-        height: 87
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c420307ea45b5c4daee9ae2b1ed43da
-      internalID: -1207662948
+      spriteID: 111261c62cdb7d0429b15abe5962c6de
+      internalID: -1588806120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_11
+      name: Shake_11
       rect:
         serializedVersion: 2
-        x: 2763
+        x: 1020
         y: 0
-        width: 76
-        height: 87
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e4907c5efcc4e942979266667eed7c0
-      internalID: -1646024886
+      spriteID: fe57e0b72ec122043b37d109f16b599f
+      internalID: 679387513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_12
+      name: Shake_12
       rect:
         serializedVersion: 2
-        x: 3010
+        x: 1275
         y: 0
-        width: 76
-        height: 87
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31b9b046a67259b468b4d010b1af941a
-      internalID: 2083733224
+      spriteID: 1cdd250295a07f74486622173b4375e0
+      internalID: -1614984909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_13
+      name: Shake_13
       rect:
         serializedVersion: 2
-        x: 3256
+        x: 1530
         y: 0
-        width: 76
-        height: 87
+        width: 255.85715
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f8e3f5be4f681f44af95c9aea89c682
-      internalID: -145335652
+      spriteID: de13d49cfb8525e49ae93eb62ce3694a
+      internalID: -538196375
       vertices: []
       indices: 
       edges: []
@@ -401,20 +401,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_0: 1940473277
-      idle_1: -1456734075
-      idle_10: -1207662948
-      idle_11: -1646024886
-      idle_12: 2083733224
-      idle_13: -145335652
-      idle_2: 1614305608
-      idle_3: -515504673
-      idle_4: 2138378304
-      idle_5: 780484735
-      idle_6: -1138156839
-      idle_7: -64458178
-      idle_8: 1906280354
-      idle_9: 19909696
+      Shake_0: -1055373370
+      Shake_1: 1150258693
+      Shake_10: -1588806120
+      Shake_11: 679387513
+      Shake_12: -1614984909
+      Shake_13: -538196375
+      Shake_2: -2107910844
+      Shake_3: 362051989
+      Shake_4: -410712125
+      Shake_5: -209854982
+      Shake_6: 414676936
+      Shake_7: 1783001653
+      Shake_8: 803737873
+      Shake_9: 1388706438
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
