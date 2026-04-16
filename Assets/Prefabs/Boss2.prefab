@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3300419883422892927}
   - component: {fileID: 8206431512081048442}
   - component: {fileID: 993860687}
-  - component: {fileID: -8614355565637478628}
   m_Layer: 10
   m_Name: Boss2
   m_TagString: Enemy
@@ -182,58 +181,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-8614355565637478628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3300419883422892898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e459fa7acedc94ea34692fe58806f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  detectDistance: 0
-  damageToPlayer: 0
-  hurtRecoil: {x: 0, y: 0}
-  hurtRecoilTime: 0
-  deathForce: {x: 0, y: 0}
-  destroyDelay: 0
-  bossDisplayName: Warden of Ash
-  walkSpeed: 3.5
-  chargeSpeed: 14
-  leapForce: 22
-  meleeRange: 2.5
-  chargeRange: 8
-  rangedRange: 14
-  groundSlamDamage: 15
-  chargeDamage: 20
-  spinDamage: 18
-  leapDamage: 25
-  ashProjectileDmg: 12
-  furyHitDamage: 10
-  groundSlamCooldown: 4
-  chargeCooldown: 6
-  spinCooldown: 7
-  leapCooldown: 8
-  ashBarrageCooldown: 9
-  furyComboColdown: 5
-  meleePoint: {fileID: 0}
-  spinCenter: {fileID: 0}
-  leapImpactPoint: {fileID: 0}
-  meleeBoxSize: {x: 2.5, y: 1.5}
-  spinRadius: 2.8
-  leapRadius: 3
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  ashProjectilePrefab: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
-  phaseTwoThreshold: 0.6
-  phaseThreeThreshold: 0.3
-  maxHealth: 0
 --- !u!1 &7271492947393462012
 GameObject:
   m_ObjectHideFlags: 0

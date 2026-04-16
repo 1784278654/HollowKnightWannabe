@@ -775,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 3300419883422892898, guid: c1e93eb9cf973b040910ed5d38398257,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5975850566546434029, guid: c1e93eb9cf973b040910ed5d38398257,
         type: 3}
@@ -970,7 +970,7 @@ PrefabInstance:
     - target: {fileID: 3300419883422892898, guid: 913713defc6a03e4f94e32acb2ed820f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7271492947393462012, guid: 913713defc6a03e4f94e32acb2ed820f,
         type: 3}
@@ -1007,8 +1007,7 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.52
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -8614355565637478628, guid: 913713defc6a03e4f94e32acb2ed820f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3300419883422892897, guid: 913713defc6a03e4f94e32acb2ed820f,
@@ -2826,8 +2825,8 @@ MonoBehaviour:
   slashActiveWindow: 0.18
   slashRecovery: 0.35
   slashGapBetween: 0.12
-  jumpRiseTime: 0.5
-  jumpFallTime: 0.6
+  jumpRiseTime: 1.5
+  jumpFallTime: 0.8
   jumpRecovery: 0.5
   chargeWindup: 0.35
   chargeDuration: 0.4
@@ -2835,9 +2834,9 @@ MonoBehaviour:
   fireWindup: 0.3
   fireRecovery: 0.4
   betweenAttacks: 0.6
-  slashDamage: 14
-  jumpDamage: 20
-  chargeDamage: 18
+  slashDamage: 1
+  jumpDamage: 1
+  chargeDamage: 1
   meleePoint: {fileID: 1909053867}
   meleeBoxSize: {x: 4.5, y: 1.4}
   playerLayer:
